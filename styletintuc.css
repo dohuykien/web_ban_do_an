@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Kufam:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khmer&family=Kadwa:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend Tera&family=Kadwa:wght@400;700&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+.news-section {
+    width: 80%; /* Giới hạn chiều rộng để không tràn toàn màn hình */
+    margin: 0 auto; /* Căn giữa nội dung */
+    background-color: #e0e0e0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: left;
+    color: #333;
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    font-family: "Lexend Tera";  
+    letter-spacing: 2px;
+}
+
+
+.search-and-categories {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.orange-bar_1 {
+    margin-top: 10px;
+    width: 70px;
+    height: 12px;
+    background-color: #FF6600;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 2px;
+}
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 60%;
+    align-items: center;
+}
+
+.categories button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #eceef2;
+    cursor: pointer;
+    font-size: 1em;
+    color: #333;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.categories button:hover {
+    background-color: #ddd;
+    text-decoration: underline;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-bottom: 70px;
+    
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 400px;
+    border: 0px solid #ccc;
+    border-radius: 25px 0 0 25px; /* Bo góc tròn cho input */
+    outline: none; /* Xóa viền mặc định khi click vào */
+    border-radius: 10px 0 0 10px;
+}
+
+.search-bar button {
+    padding: 10px;
+    width: 50px;
+    margin-bottom: 35px;
+    border: 0px solid #ccc; /* Giữ viền cùng màu với input */
+    border-left: none; /* Bỏ viền giữa input và button */
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+}
+
+
+.news-list {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các khối xuống dòng nếu không đủ không gian */
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.news-item {
+    padding: 0; /* Xóa padding để bỏ nền trắng */
+    width: 30%;
+    text-align: left; /* Căn giữa nội dung bên trong */
+}
+
+.news-item img {
+    width: 100%;
+    height: auto;
+}
+
+.news-item h2 {
+    font-size: 1.2em;
+    color: #FF6600;
+    margin-top: 10px;
+}
+
+.news-item p {
+    margin-top: 10px;
+    color: #666;
+    font-size: 0.9em;
+}
+.space_1 {
+    background-color:#e0e0e0 ;
+
+}

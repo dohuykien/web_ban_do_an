@@ -1,0 +1,740 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Kufam:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khmer&family=Kadwa:wght@400;700&display=swap');
+
+/* Banner */
+#banner {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: relative;
+}
+
+.box-left {
+    max-width: 600px;
+    padding: 50px;
+    color: #fff;
+}
+
+.box-left h2 {
+    font-size: 40px;
+    font-family: 'Itim', cursive; /* Font cho banner */
+    color: #fff;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.box-left p {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 30px;
+    font-family: "khmer";
+}
+
+.box-left button {
+    background-color: #FF6600; /* Màu nền của nút */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Itim', cursive;
+    border-radius: 20px;
+}
+#intro-section {
+    background-color: #333; /* Dark background */
+    margin: 0 auto;
+    color: white;
+    display: flex;
+    justify-content: center;
+    height: 600px;
+}
+
+.intro-container {
+    display: flex;
+    align-items: center;
+}
+
+.intro-image img {
+    padding: 10px;
+    height: auto;
+    max-width: 550px;
+    border-radius: 97px;
+    margin-right: 50px;
+}
+
+.intro-content {
+    margin-left: 20px;
+    max-width: 450px;
+}
+
+.intro-content h2 {
+    margin-top: 20px;
+    font-family: 'Kadwa';
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.orange-bar {
+    width: 70px;
+    height: 12px;
+    background-color: #FF6600;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.intro-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: 'Khmer';
+    margin-bottom: 20px;
+    color: #F5F5F5;
+}
+/* Style cho phần hướng dẫn */
+#Guide {
+    margin: 0 auto;
+    padding: 50px 20px;
+    background-color: #E5E5E5;
+}
+
+/* Style cho phần header */
+.header2 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.header2 h2 {
+    font-size: 2.5rem;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.container_order {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    justify-content: center;
+}
+
+/* Style cho từng bước */
+.item1 {
+    width: 200px;
+    height: 200px;
+    background-color:white;
+    padding: 20px;            box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right:40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.item1 img {
+    width: 34px;
+    margin-bottom: 5px;
+}
+.text-container {
+    max-width: 100%; /* Đảm bảo h2 và p không vượt quá giới hạn của box */
+}
+
+.text-container h3 {
+    font-size:18px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.text-container p {
+    margin-top: 8px;
+    font-size: 16px;
+    word-wrap: break-word; /* Giúp đoạn văn tự động xuống dòng */
+}
+
+
+.item2 {
+    width: 200px;
+    height: 200px;
+    background-color:white;
+    padding: 20px;            box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right:40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.item2 img {
+width: 45px;
+height: 40px;
+margin-bottom: 10px;
+}
+
+.item3 {
+    width: 200px;
+    height: 200px;
+    background-color:white;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right:40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.item3 img {
+width: 43px;
+height: 40px;
+margin-bottom: 8px;
+}
+.item4 {
+    width: 200px;
+    height: 200px;
+    background-color:white;
+    padding: 20px;            box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right:40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.item4 img {
+    width: 35px;
+    margin-bottom: 10px;
+}
+
+/* Style cho phần header và bar */
+#wp-product {
+    text-align: center;
+    padding: 20px;
+    background-color: #FF6600;
+}
+
+.header3 h2 {
+
+    letter-spacing: 3px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.orange-bar_1 {
+    width: 70px;
+    height: 12px;
+    background-color:#FF6600;
+    margin: 0 auto 20px auto;
+    border-radius: 20px; /* Canh giữa và thêm khoảng cách bên dưới */
+}
+
+.header3 p {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 40px; /* Khoảng cách bên dưới đoạn text */
+    font-family: 'Khmer';
+}
+
+/* Style cho phần sản phẩm */
+.product {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 sản phẩm trên mỗi hàng */
+    gap:20px; /* Khoảng cách giữa các sản phẩm */
+    justify-items: center; /* Canh giữa các sản phẩm theo chiều ngang */
+}
+
+.item {
+    width: calc(100% / 4 - 30px);
+    position: relative; /* Để định vị icon giỏ hàng */
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    width: 100%;
+    max-width: 250px; /* Đặt kích thước tối đa cho sản phẩm */
+}
+
+.item:hover {
+    transform: scale(1.05); /* Tạo hiệu ứng khi di chuột qua */
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.item .name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.item .desc {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.item .time {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+/* Style cho icon giỏ hàng */
+.iconproduct {
+    position: absolute;
+    bottom: 0px;
+    right: 6px;
+}
+
+.iconproduct img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.iconproduct img:hover {
+    transform: scale(1.2); /* Phóng to icon khi hover */
+}
+.orange-bar_2 {
+    width: 70px;
+    height: 12px;
+    background-color:white;
+    margin: 0 auto 20px auto;
+    border-radius: 20px; /* Canh giữa và thêm khoảng cách bên dưới */
+}
+
+/* Tổng thể của section bảo vệ môi trường */
+#enviroment {
+    padding: 40px 20px;
+    background-color: #E5E5E5;
+    text-align: center;
+}
+
+/* Header của section */
+.header3 h4 {
+    font-family: 'Lexend Tera';
+    letter-spacing: 3px;
+    font-size:18px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.header3 h3 {
+    letter-spacing: 3px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+}
+
+.orange-bar_1 {
+    width: 70px;
+    height: 12px;
+    background-color: #FF6600;
+    margin: 15px auto;
+    border-radius: 5px;
+}
+
+/* Phần thông tin với hình ảnh và mô tả */
+.info {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.envi {
+    width: 280px;
+    margin: 0 20px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures image and text are spread evenly */
+    height: 400px; /* Ensures all blocks have equal height */
+}
+
+/* Hình ảnh của mỗi khối */
+.envi img {
+    width:100%;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Mô tả dưới hình ảnh */
+.desc2 {
+    font-family: 'Itim', cursive;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 10px; /* Ensures a small gap between image and description */
+    flex-grow: 1; /* Ensures the description occupies remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .envi {
+        width: 100%;
+        margin-bottom: 20px;
+        height: auto; /* Make height auto for mobile devices */
+    }
+}
+
+
+
+/* Container for all content */
+#customer {
+    background-color: #888;
+    padding: 40px;
+    text-align: center;
+    justify-content: center;
+    height: 550px;
+}
+
+/* Header section styling */
+.header4 h3 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.header4 .orange-bar_1 {
+    width: 70px;
+    height: 12px;
+    background-color: #ff6b00;
+    margin: 0 auto 10px auto;
+}
+
+.header4 p {
+    color: #ffffff;
+    font-size: 16px;
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+}
+
+/* Carousel container to wrap images and arrows */
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: rgba(217, 217, 217, 0.33);
+    border-radius: 30px;
+    position: relative; /* for arrow positioning */
+    height: 350px; /* Tăng chiều cao đủ để chứa 2 hàng ảnh */
+}
+
+/* Carousel content */
+.carousel {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.carousel-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 ảnh mỗi hàng */
+    grid-template-rows: repeat(2, 1fr); /* 2 hàng ảnh */
+    gap: 15px; /* Khoảng cách giữa các ảnh */
+    row-gap: 10px; /* Khoảng cách giữa hàng trên và hàng dưới */
+    transition: transform 0.6s ease-in-out; /* Hiệu ứng chuyển động mượt mà */
+    padding: 10px;
+    height: 100%; /* Sử dụng toàn bộ chiều cao khối cha */
+    justify-content: center;
+}
+.carousel img {
+    width: 80%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng khung */
+    height: auto; /* Đảm bảo chiều cao không vượt quá khung */
+    object-fit: cover; /* Đảm bảo không bị bóp méo ảnh */
+    border-radius: 10px; /* Bo góc cho ảnh */
+    display: none; /* Mặc định ẩn ảnh */
+    transition: opacity 0.3s ease-in-out;
+}
+.carousel-inner img.active {
+    display: block; /* Hiển thị chỉ ảnh trong batch */
+}
+
+/* Style for left and right arrow buttons */
+button.arrow-left, button.arrow-right {
+    background-color: rgba(255, 165, 0, 0.3);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+button.arrow-left {
+    left: 10px;
+}
+
+button.arrow-right {
+    right: 10px;
+}
+
+button.arrow-left:hover, button.arrow-right:hover {
+    background-color: rgba(255, 165, 0, 0.6);
+}
+
+.arrow {
+    font-size: 20px;
+    color:white;
+}
+
+/* Base styles for the modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Black background with opacity */
+    overflow: auto; /* Enable scroll if needed */
+
+}
+
+.modal-content {
+    background-color: white; /* White background for the form */
+    margin: 15% auto; /* 15% from top and center it horizontally */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    max-height: 80%;
+    max-width: 400px; /* Set max-width for better view */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #666;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #c0392b;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Additional styles for transitions */
+.modal.show {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+#cart-summary {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Hidden to the right */
+    width: 400px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    transition: right 0.4s ease;
+}
+
+#cart-summary.active {
+    right: 0; /* Cart slides in */
+}
+
+#cart-summary-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #f7f7f7;
+    margin-bottom: 20px;
+    height: auto;
+    align-items: center;
+}
+#cart-summary-header h3 {
+ font-family: "Khmer";
+ font-size: 20px;
+ font-weight: bold;
+ margin-top: 5px;
+}
+.close-btn {
+    background-color: transparent; /* Bỏ nền */
+    color: red;                    /* Màu đỏ để nổi bật */
+    border: none;                  /* Bỏ viền */
+    font-size: 18px;               /* Kích thước lớn hơn */
+    cursor: pointer;               /* Con trỏ thành hình tay khi hover */
+    transition: color 0.3s ease;   /* Hiệu ứng chuyển đổi màu khi hover */
+}
+.close-btn:hover {
+    color: darkred;                /* Đổi màu thành đỏ đậm khi hover */
+}
+
+
+#cart-items {
+    padding: 20px;
+    max-height: 70%;
+    overflow-y: auto;
+}
+
+.order-btn {
+    background-color: red;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+/* Blur background when cart is open */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Style for the total price */
+#cart-summary-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: left;
+}
+.temp-total {
+    font-size: 18px;               /* Kích thước chữ */
+    font-weight: bold;
+    margin-bottom: 10px;           /* Khoảng cách với nút đặt hàng */
+    color: red;                   /* Màu chữ mặc định */
+}
+
+.order-btn {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #FF6600;     /* Màu nền nút */
+    color: white;                  /* Màu chữ */
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.order-btn:hover {
+    background-color: darkred;     /* Màu nền khi hover */
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item-info {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-info img {
+    margin-right: 10px;
+    border-radius: 5px;
+
+}

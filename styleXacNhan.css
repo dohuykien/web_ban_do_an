@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Kufam:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khmer&family=Kadwa:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend Tera&family=Kufam:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open Sans&family=Roboto:wght@400;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+.container_1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+/* Container for the steps */
+.step-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    width: 100%;
+}
+.Header{
+    margin-bottom: 20px;
+    margin-left: 10px;
+    font-family: "Lexend Tera";
+    letter-spacing: 3px;
+
+}
+.step_1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    flex-grow: 1;
+    font-size: 16px;
+    background-color:#141414; /* Gray color for inactive steps */
+    color: white; /* Text color for inactive steps */
+    border-radius: 25px;
+    position: relative;
+    text-align: center;
+}
+.step_2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    flex-grow: 1;
+    font-size: 16px;
+    background-color: #141414; /* Gray color for inactive steps */
+    color: white; /* Text color for inactive steps */
+    border-radius: 25px;
+    position: relative;
+    text-align: center;
+}
+.step_3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    flex-grow: 1;
+    font-size: 16px;
+    background-color: #FF6600; /* Gray color for inactive steps */
+    color: #333; /* Text color for inactive steps */
+    border-radius: 25px;
+    position: relative;
+    text-align: center;
+}
+
+.step-active {
+    background-color: #141414; /* Red for the active step */
+    color: white;
+}
+
+.step-active::after {
+    border-left-color: #FF6600; /* Arrow color matches the active step */
+}
+
+/* Icons for each step */
+.step_1 i {
+    margin-right: 10px;
+}
+.step_2 i {
+    margin-right: 10px;
+}.step_3 i {
+    margin-right: 10px;
+}.step_4 i {
+    margin-right: 10px;
+}
+
+/* Adjust active step styling */
+.step.step-active {
+    background-color: #FF6600; /* Match the red color from the image */
+    color: white;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 50px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.confirmation {
+    border-radius: 8px;
+    max-width: 1200px;
+}
+
+h1 {
+    font-size: 32px;
+    text-transform: uppercase;
+    color: black;
+    text-align: left;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+}
+
+i {
+    color: gray;
+}
+
+.highlight-phone {
+    color: red;
+    font-weight: bold;
+}
+
+.highlight-date {
+    background-color: yellow;
+    padding: 2px 5px;
+    font-weight: bold;
+}
+
+.order-info {
+    font-size: 16px;
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.order-details {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    border: 1px solid #ccc; /* #ccc là mã màu xám */
+    padding: 20px;
+}
+
+.order-details li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.order-details strong {
+    color: black;
+}
+
+
+
+
+.chitietdonhang{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding-right: 20px;
+}
+.order_1, .cart-items-container {
+    max-width: 1200px;
+    margin: auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+.order-header, .order-row, .order-total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.order-header{
+    background-color: #ddd;
+    font-weight: bold;
+}
+.order-row {
+    border-top: 1px solid #eee;
+}
+order-row-product {
+    border-top: 1px solid #eee;
+}
+.order-total-row {
+    background-color: #ddd;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.order-label {
+    flex: 1;
+    text-align: center;
+}
+.order-label-pr, .order-label-qtt {
+    flex: 1;
+    text-align: right;
+}
+.order-label-product {
+    flex: 1;
+    text-align: left;
+}
+.order-label-price, .order-label-quantity {
+    flex: 1;
+    text-align: center;
+}
+.order-label-price {
+    padding-right: 30px;
+}
+.order-value {
+    flex: 1;
+    text-align: right;
+}
+.separator {
+    margin: 20px 0;
+    text-align: center;
+    color: #999;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.menu-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.menu-table th, .menu-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.menu-table th {
+    background-color: #ddd;
+    font-weight: bold;
+}
+
+.menu-table td div {
+    font-weight: bold;
+    color: #333;
+}
+
+.menu-table td strong {
+    font-weight: bold;
+    color: #333;
+}
+
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px dashed #999;
+}
+
+p {
+    color: #666;
+    margin: 10px 0;
+}
+
+
+.space_1 {
+    background-color:#f4f4f4 ;
+}
+
+.footer-company-info p {
+    color: #fff;
+}
+
+
+.button-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.button-back,
+.button-complete {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.button-back {
+    background-color: #bdc3c7;
+    color: #2c3e50;
+}
+
+.button-back:hover {
+    background-color: #95a5a6;
+}
+
+.button-complete {
+    background-color: #FF6600;
+    color: #fff;
+}
+
+.button-complete:hover {
+    background-color: #2ecc71;
+}
+
+
+
+
+
+
+
+
+
+
+/* Định dạng cho phần product-section */
+.product-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding-left: 0; /* Điều chỉnh lề trái cho cả section */
+}
+.product-info {
+    display: flex;
+    align-items: center;
+    padding-left: 50px; /* Điều chỉnh vị trí sát lề trái */
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+.product-price, .product-quantity {
+    text-align: center;
+    font-size: 16px;
+    color: #686868;
+}
+.product-total {
+    text-align: center;
+    font-size: 16px;
+    color: #FF6600;
+}
+
+
+
+
+

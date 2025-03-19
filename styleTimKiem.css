@@ -1,0 +1,147 @@
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.left {
+    flex: 3;
+    padding-right: 20px;
+}
+
+.right {
+    flex: 1;
+    margin-top: 78px;
+    margin-left: 20px;
+}
+
+.title {
+    font-size: 2em;
+    color: #222;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.orange-bar {
+    width: 70px;
+    height: 12px;
+    background-color: #FF6600;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 2px;
+}
+
+.search-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #FF6600;
+    border-radius: 10px 0px 0px 10px;
+    outline: none;
+}
+
+.search-btn {
+    background-color: #FF6600;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid #FF6600;
+    cursor: pointer;
+}
+
+.filter-menu {
+    margin-top: 20px;
+}
+
+.filter-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.filter-menu ul li {
+    color: #222;
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-item {
+    display: flex;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.product-info p {
+    font-size: 1em;
+    color: #666;
+}
+/* Phần pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-item {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 5px;
+    font-size: 1em;
+    color: #e53935;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.page-item:hover {
+    background-color: #f0f0f0;
+}
+
+.page-item.active {
+    background-color: #e53935;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+}

@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Kufam:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khmer&family=Kadwa:wght@400;700&display=swap');
+
+body {
+ background-color: #f0f0f0;   
+}
+.faq-container {
+    width: 70%;
+    margin: 50px auto;
+    background-color: #f0f0f0;
+}
+
+
+.faq-title {
+    text-align: left;
+    font-size: 36px;
+    margin-bottom: 20px;
+    margin-left: 3px;
+}
+
+.orange-bar_1 {
+    width: 70px;
+    height: 12px;
+    background-color:#ff6b00;
+    margin-left: 0; /* Canh về lề trái */
+    margin-bottom: 20px;
+    border-radius: 20px;
+    margin-left: 3px;
+}
+
+.faq-subtitle {
+    text-align: left;
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 20px;
+    font-family: "Khmer";
+    margin-left: 3px;
+
+}
+
+.faq-item {
+    background-color: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.faq-header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    font-family: "Khmer";
+}
+
+.faq-content {
+    margin-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out; /* Hiệu ứng chuyển đổi mượt mà */
+    color: #555;
+    font-family: "Khmer";
+
+}
+
+.toggle-icon {
+    font-size: 24px;
+    color: red;
+}
+.space_1 {
+    background-color: #f0f0f0 ;
+
+}

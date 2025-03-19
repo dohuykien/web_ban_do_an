@@ -1,0 +1,528 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Kufam:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khmer&family=Kadwa:wght@400;700&display=swap');
+
+/* Tổng thể header */
+#header-wrapper {
+    background-color: #333; 
+    padding: 10px 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    padding: 0; /* Xóa padding của body */
+    margin: 0;  /* Xóa margin của body */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    color: white;
+    font-family: "Kadwa", sans-serif;
+    padding-left: 30px;
+}
+
+/* Logo bên trái */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo img {
+    width: 60px; 
+    margin-bottom: 5px;
+    border-radius: 50%;
+}
+
+.logo span {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Menu điều hướng */
+.main-menu a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px; 
+    font-family: 'Itim', cursive;
+    transition: color 0.3s ease; /* Hiệu ứng khi hover */
+}
+
+.main-menu a:hover {
+    color: #ddd; /* Màu khi hover */
+}
+.tk-avatar{
+    width: 2rem;
+    height: 2rem;
+    border-radius:70%;
+}
+
+.right-menu {
+    display: flex;
+    align-items: center;
+}
+
+.right-menu a {
+    color: white;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Itim', cursive; /* Sử dụng font Itim cho các liên kết bên phải */
+}
+
+.right-menu img {
+    width: 20px; /* Kích thước biểu tượng ngôn ngữ và giỏ hàng */
+    vertical-align: middle; /* Căn giữa biểu tượng với chữ */
+    filter: brightness(0) invert(1); /* Chuyển biểu tượng thành màu trắng */
+    -webkit-filter: brightness(0) invert(1);
+}
+
+.right-menu span {
+    color: white;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+/* Phần giỏ hàng */
+.cart {
+    position: relative;
+    display: inline-block;
+
+}
+#header-wrapper .cart #cart-count {
+    position: absolute;
+    top: -5px; /* Điều chỉnh vị trí từ trên xuống */
+    right: -15px; /* Điều chỉnh vị trí từ phải sang */
+    background-color: #FF6600; /* Nền màu đen */
+    color: white; /* Màu đỏ cho số */
+    font-size: 12px; /* Kích thước chữ nhỏ */
+    padding: 2px 4px; /* Tạo khoảng đệm cho số */
+    border-radius: 50%; /* Tạo nền tròn */
+    display: none; /* Ẩn mặc định, hiển thị khi có sản phẩm */
+    font-weight: bold; /* Đậm chữ */
+    line-height: 1;
+    min-width: 18px; /* Đảm bảo có chiều rộng tối thiểu cho hình tròn */
+    text-align: center;
+}
+.cart img {
+    width: 40px; /* Kích thước biểu tượng giỏ hàng lớn hơn */
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .envi {
+        width: 100%;
+        margin-bottom: 20px;
+        height: auto; /* Make height auto for mobile devices */
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 100px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.footer-logo h2 {
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
+    font-family: "Kadwa", sans-serif;
+}
+
+.footer-company-info,
+.footer-links,
+.footer-follow-us {
+    max-width: 300px;
+}
+
+.footer-company-info h3,
+.footer-links h3,
+.footer-follow-us h3 {
+    color: #ff6b00;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-family: "Kadwa", sans-serif;
+
+}
+
+.footer-company-info p {
+    margin: 5px 0;
+    line-height: 1.6;
+    font-family: "Kadwa", sans-serif;
+    font-size: 13px;
+
+}
+
+.footer-links ul {
+    font-family: "Kadwa", sans-serif;
+    font-size: 13px;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-follow-us .social-icons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-follow-us .social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-certification img {
+    width: 100px;
+}
+
+.footer-follow-us h3 {
+    margin-bottom: 10px;
+    color: #ff6b00;
+}
+
+/* Base styles for the modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Black background with opacity */
+    overflow: auto; /* Enable scroll if needed */
+    
+}
+
+.modal-content {
+    background-color: white; /* White background for the form */
+    margin: 15% auto; /* 15% from top and center it horizontally */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    max-height: 80%;
+    max-width: 400px; /* Set max-width for better view */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+h2.healthy {
+    color: #fff;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #666;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #c0392b;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Additional styles for transitions */
+.modal.show {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+
+/* Initial hidden cart style */
+#cart-summary {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Hidden to the right */
+    width: 400px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    transition: right 0.4s ease;
+}
+
+#cart-summary.active {
+    right: 0; /* Cart slides in */
+}
+
+#cart-summary-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #f7f7f7;
+    margin-bottom: 20px;
+    height: auto;
+    align-items: center;
+}
+#cart-summary-header h3 {
+    color: black;
+ font-family: "Khmer";
+ font-size: 20px;
+ font-weight: bold;
+ margin-top: 5px;
+}
+.close-btn {
+    background-color: transparent; /* Bỏ nền */
+    color: red;                    /* Màu đỏ để nổi bật */
+    border: none;                  /* Bỏ viền */
+    font-size: 18px;               /* Kích thước lớn hơn */
+    cursor: pointer;               /* Con trỏ thành hình tay khi hover */
+    transition: color 0.3s ease;   /* Hiệu ứng chuyển đổi màu khi hover */
+}
+.close-btn:hover {
+    color: darkred;                /* Đổi màu thành đỏ đậm khi hover */
+}
+
+
+#cart-items {
+    padding: 20px;
+    max-height: 70%;
+    overflow-y: auto;
+}
+
+.order-btn, .cart-link {
+    background-color: red;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+/* Blur background when cart is open */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Style for the total price */
+#cart-summary-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: left;
+}
+.temp-total {
+    font-size: 18px;               /* Kích thước chữ */
+    font-weight: bold;
+    margin-bottom: 10px;           /* Khoảng cách với nút đặt hàng */
+    color: red;                   /* Màu chữ mặc định */
+}
+
+.order-btn, .cart-link {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #FF6600;     /* Màu nền nút */
+    color: white;                  /* Màu chữ */
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.order-btn:hover, .cart-link:hover {
+    background-color: darkred;     /* Màu nền khi hover */
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item-info {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-info img {
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Căn chỉnh form */
+
+
+.form-group {
+    display: flex;   /* Sử dụng flex để các phần tử nằm cùng dòng */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.form-control {
+    flex: 1;            /* Cho phép ô tìm kiếm mở rộng đầy đủ chiều rộng */
+    margin-right: 10px;  /* Tạo khoảng cách giữa ô tìm kiếm và nút */
+    padding: 10px;       /* Thêm khoảng cách bên trong ô tìm kiếm */
+    font-size: 16px;     /* Tăng kích thước chữ */
+    border: 1px solid #ced4da; /* Đường viền mỏng và màu sáng */
+    border-radius: 5px;  /* Bo góc ô tìm kiếm */
+}
+
+.btn-primary {
+    padding: 10px 20px;   /* Tạo kích thước nút lớn hơn */
+    font-size: 16px;      /* Kích thước chữ cho nút */
+    background-color: #007bff;  /* Màu nền nút (blue) */
+    border: none;         /* Bỏ viền nút */
+    border-radius: 5px;   /* Bo góc nút */
+    transition: background-color 0.3s ease; /* Hiệu ứng hover */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;  /* Đổi màu nền khi hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+table {
+    width: 100%; /* Đặt chiều rộng của bảng */
+    border-collapse: collapse; /* Xóa khoảng cách giữa các ô */
+}
+
+th, td {
+    padding: 10px; /* Khoảng cách bên trong các ô */
+    border: 1px solid #ccc; /* Đường viền cho các ô */
+    text-align: left; /* Căn trái cho các ô */
+}
+
+th {
+    background-color: #f2f2f2; /* Màu nền cho tiêu đề bảng */
+}
+/* Thêm quy tắc cho cột số lượng */
+td.item-quantity {
+    width: 100px; /* Đặt chiều rộng cố định cho cột số lượng */
+}
+
+.item-quantity {
+    width: 80%; /* Đặt chiều rộng cho ô nhập số lượng */
+    text-align: center; /* Căn giữa cho ô nhập số lượng */
+}
+
+
+.avatar img{
+    width: 3rem;
+    height: 3rem;
+    border-radius:70%;
+}
+.user-nav{
+    display:flex;
+}
+
