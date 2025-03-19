@@ -1,0 +1,92 @@
+{% extends "inherit.html" %}
+
+{% block title %}Tin tức{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styletintuc.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="news-section">
+        <h1>Tin Tức</h1>
+        <div class="orange-bar_1"></div>
+        <div class="search-and-categories">
+            <div class="categories">
+                <button>Sự kiện</button>
+                <button>Khuyến mãi</button>
+                <button>Thông báo</button>
+                <button><a href="{{ url_for('thuc_don') }}">Thực đơn</a></button>
+                <button>Bài tập</button>
+                <button>Giảm cân</button>
+                <button>Chế độ ăn</button>
+            </div>
+            <form action="{{ url_for('search') }}" method="get" style="margin-top: 16px;">
+                <div class="search-bar">
+                    <input type="text" name="q" placeholder="Tìm kiếm" class="search-input">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+
+
+        </div>
+        <div class="news-list">
+            <div class="news-item">
+                <img src="{{ url_for('static', filename='images/tintuc1.jpg') }}" alt="News Image">
+                <h2>FITFOOD X PNJ: Tỏa Sáng Và Phát Triển Trọn Vẹn Sức Khỏe Và Tinh Thần</h2>
+                <p>26/09/2024</p>
+                <p>Fitfood thật vinh hạnh khi có cơ hội chăm sóc bữa ăn, mang đến những món ăn thơm ngon và dinh dưỡng...</p>
+            </div>
+            <div class="news-item">
+                <img src="{{ url_for('static', filename='images/tintuc2.jpg') }}" alt="News Image">
+                <h2>FITFOOD và JOY Foundation: Hòa Âm Trọn Vẹn Tại TRÒN Concert</h2>
+                <p>12/09/2024</p>
+                <p>Vừa qua, Fitfood đã có cơ hội đồng hành cùng JOY Foundation trong một sự kiện âm nhạc đặc biệt...</p>
+            </div>
+            <div class="news-item">
+                <img src="{{ url_for('static', filename='images/tintuc3.jpg') }}" alt="News Image">
+                <h2>Tiệc Tea Break Kỷ Niệm 10 Năm Cùng Nutrition Depot Vietnam</h2>
+                <p>11/09/2024</p>
+                <p>Cùng Fitfood “nhập tiệc” và điểm lại những khoảnh khắc đáng nhớ trong buổi tiệc Tea break hoành tráng...</p>
+            </div>
+            <div class="news-item">
+                <img src="{{ url_for('static', filename='images/tintuc4.jpg') }}" alt="News Image">
+                <h2>Sinh nhật rực rỡ cùng Fitfood và ITR VN: Vui hết cỡ, khỏe hết mình!</h2>
+                <p>7/09/2024</p>
+                <p>Fitfood vinh dự dược đồng hành cùng ITR VN tổ chức một bữa tiệc sinh nhật thật đặc biệt dành...</p>
+            </div>
+            <div class="news-item">
+                <img src="{{ url_for('static', filename='images/tintuc5.jpg') }}" alt="News Image">
+                <h2>Fitfood đồng hành cùng "Anh trai vượt ngàn chông gai": Năng lượng dồi dào cho hành trình chinh phục</h2>
+                <p>5/09/2024</p>
+                <p>"Flex" tí hình ảnh của Gai Con Fitfood tại hậu trường Anh Trai Vượt Ngàn Chông Gai 🤩</p>
+            </div>
+            <div class="news-item">
+                <img src="{{ url_for('static', filename='images/tintuc6.jpg') }}" alt="News Image">
+                <h2>ƯU ĐÃI QUỐC KHÁNH</h2>
+                <p>2/09/2024</p>
+                <p>Mừng Quốc Khánh - Fitfood tung Ưu đãi độc quyền siêu xịnnn!</p>
+            </div>
+            <div class="news-item">
+                <img src="{{ url_for('static', filename='images/tintuc7.jpg') }}" alt="News Image">
+                <h2>Fitfood ngọt ngào tô điểm cho ngày làm việc của Nestlé</h2>
+                <p>22/07/2024</p>
+                <p>Fitfood tự hào khi được đồng hành cùng Nestlé,...</p>
+            </div>
+            <div class="news-item">
+                <img src="{{ url_for('static', filename='images/tintuc8.jpg') }}" alt="News Image">
+                <h2>FITFOOD VI VU - MIỄN PHÍ GIAO HÀNG BÌNH THẠNH</h2>
+                <p>16/07/2024</p>
+                <p>Từ 17/07 - 25/07, Fitfood miễn phí giao hàng tại Bình Thạnh...</p>
+            </div>
+            <div class="news-item">
+                <img src="{{ url_for('static', filename='images/tintuc9.jpg') }}" alt="News Image">
+                <h2>Điểm tin Healthy Tháng 07 - các chương trình khuyến mãi</h2>
+                <p>08/07/2024</p>
+                <p>Tổng hợp các chương trình khuyến mãi tháng 07...</p>
+            </div>
+        </div>
+    </div>
+    <div class="space_1"></div>
+
+{% endblock %}

@@ -1,0 +1,196 @@
+
+{% extends "inherit.html" %}
+
+{% block title %}HealthyFoodVn Tai khoan {{username}}{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styleTaiKhoan.css') }}">
+<div class="tk-container">
+    <div class="row">
+        <div class="col-lg-4 col-xl-3 mb-4">
+            <div class="sidebar">
+                <div class="profile d-flex align-items-center">
+                    <div class="avatar">
+                        <img src="{{ url_for('static', filename='images/no-image.png') }}" alt="" border="0" class="img-fluid" />
+                    </div>
+                    <div class="info d-flex flex-column">
+                        <span class="name">{{ session["username"] }}</span>
+                    </div>
+                </div>
+                <ul class="nav flex-column">
+                    <li  class="nav-item">
+                        <a  class="active nav-link" href="{{url_for('TaiKhoan')}}">
+                            <i class='fas fa-user	'></i><span>Thông tin tài khoản</span>
+                        </a>
+                    </li>
+                    <li  class="nav-item">
+                        <a  class="nav-link" href="#">
+                            <i class='fas fa-gift'></i><span>Point</span>
+                        </a>
+
+                    </li>
+                    <li  class="nav-item">
+                        <a  class="nav-link" href="#">
+                            <i class='fas fa-map-marker-alt	'></i><span>Địa chỉ giao hàng</span>
+                        </a>
+
+                    </li>
+                    <li  class="nav-item">
+                        <a  class="nav-link" href="#">
+                            <i class='fas fa-truck	'></i><span>Đơn hàng hiện tại</span>
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-8 col-xl-9 mb-4">
+            <div class="main-content">
+                <div class="top-main d-lg-flex justify-content-lg-between">
+                    <div class="title ">
+                        <h5>Thông tin tài khoản</h5>
+                        <p>Quản lý thông tin tài khoản cá nhân</p>
+                    </div>
+                </div>
+                <div class="frm-account">
+                    <form class="mx-lg-4" method="POST" action="{{url_for('update_profile')}}" enctype="multipart/form-data">
+                        <div class="form-group row info">
+                            <label for="staticEmail" class="col-md-3 col-lg-4 col-xl-3 col-form-label"><strong>Email</strong></label>
+                            <div class="col-8 col-md-3 col-lg-5 hidden-text">
+                                <input type="text" class="form-control" id="staticEmail" name="email" value="{{ session['email'] }}">
+                                <span>******.com</span>
+
+                            </div>
+                            <div class="col-2 text-right">
+                                <a href="javascript:;" class="btn btn-link change-hidden">Thay đổi</a>
+                            </div>
+                        </div>
+                        <div class="form-group row info">
+                            <label for="staticPhone" class="col-md-3 col-lg-4 col-xl-3 col-form-label"><strong>SĐT</strong></label>
+                            <div class="col-8 col-md-3 col-lg-5 hidden-text">
+                                <input type="text" class="form-control" id="staticPhone" name="phone" value="">
+                                <span>**********</span>
+
+                            </div>
+                            <div class="col-2 text-right">
+                                <a href="javascript:;" class="btn btn-link change-hidden">Thay đổi</a>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputName" class="col-md-3 col-lg-4 col-xl-3 col-form-label"><strong>Họ &amp; Tên</strong></label>
+                            <div class="col-md-9 col-lg-8 col-xl-9">
+                                <input type="text" class="form-control" id="inputName" placeholder="" name="name" value="{{ session['username'] }}">
+
+                            </div>
+                        </div>
+                        <div class="form-group row">
+<!--
+           <label for="inputSex" class="col-md-3 col-lg-4 col-xl-3 col-form-label"><strong>Giới tính</strong></label>-->
+                            <div class="col-md-9 col-lg-8 col-xl-9">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" checked value="m">
+                                    <label class="form-check-label" for="inlineRadio1">Nam</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio2"  value="fm">
+                                    <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+<!--
+                         <label for="inputBirth" class="col-md-3 col-lg-4 col-xl-3 col-form-label"><strong>Năm sinh</strong></label>-->
+                            <div class="col-md-9 col-lg-8 col-xl-9">
+                                <div class="form-row">
+                                    <div class="form-group col-4">
+
+                                        <select id="inputDate" class="form-control" name="day">
+
+                                            <option value="">Ngày</option>
+                                            {% for item in days_option %}
+                                            <option value="">{{item}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    </div>
+                                    <div class="form-group col-4">
+
+                                        <select id="inputMonth" name="month" class="form-control">
+
+                                            <option value="">Tháng</option>
+
+                                            {% for item in months_option %}
+                                            <option value="">{{item}}</option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                    </div>
+                                    <div class="form-group col-4">
+
+                                        <select id="inputYear" name="year" class="form-control">
+
+                                            <option value="">Năm</option>
+
+                                            {% for item in years_option %}
+                                            <option value="">{{item}}</option>
+                                            {% endfor %}
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group row">
+<!--
+         <label for="inputAvatar" class="col-md-3 col-lg-4 col-xl-3 col-form-label"><strong>Avatar</strong></label>-->
+                            <div class="col-md-9 col-lg-8 col-xl-9">
+                                <div class="d-flex upload-preview">
+                                    <div class="avatar mr-4 image-preview" style="background-image: url('https://fitfood.vn/img/128/no-image.png')">
+
+                                    </div>
+                                    <div class="upload">
+
+                                        <input type="file" name="avatar" id="image-upload" class="inputfile" />
+
+                                        <label for="image-upload">Hình</label>
+
+                                        <p>Kích thước tối đa là 1 MB<br/>Format: .JPEG, .PNG</p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="offset-md-3 col-md-9 offset-lg-4 col-lg-8 offset-xl-3 col-xl-9">
+                                <button class="btn btn-primary" type="submit">Lưu</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--</section>-->
+{% endblock %}
+<!--bootstrap scripts-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

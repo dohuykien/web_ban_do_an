@@ -1,0 +1,107 @@
+{% extends "inherit.html" %}
+
+{% block title %}Chi tiết sản phẩm{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styleSp.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="step-container">
+            <div class="step_1 step-active">
+                <i class="fas fa-shopping-cart"></i> Đặt hàng
+            </div>
+            <div class="step_1">
+                <i class="fas fa-edit"></i> Chỉnh sửa
+            </div>
+            <div class="step_2">
+                <i class="fas fa-dollar-sign"></i> Thanh toán
+            </div>
+            <div class="step_3">
+                <i class="fas fa-check"></i> Xác nhận
+            </div>
+        </div>
+
+        <!-- Hiển thị sản phẩm -->
+        <div class="item" data-name="{{ products_packages.name }}" data-price="{{ products_packages.price }}" data-image="{{ url_for('static', filename=products_packages.image) }}">
+            <div class="product-section">
+                <!-- Ảnh sản phẩm -->
+                <div class="product-image">
+                    <img src="{{ url_for('static', filename=products_packages.image) }}" alt="{{ products_packages.name }}" />
+                </div>
+
+                <!-- Thông tin sản phẩm -->
+                <div class="product-details">
+                    <h1>{{ products_packages.name if products_packages.name else "Tên không có sẵn" }}</h1>
+                    <p>{{ products_packages.description if products_packages.description else "Mô tả không có sẵn" }}</p>
+
+                    <ul>
+                        {% for detail in products_packages.details %}
+                            <li>{{ detail }}</li>
+                        {% endfor %}
+                    </ul>
+
+                    <p>{{ products_packages.suitable_for if products_packages.suitable_for else "Không có thông tin" }}</p>
+
+                    <!-- Các tùy chọn -->
+                    <div class="options">
+                        {% for option in products_packages.options %}
+                            {% if option.plan %}
+                                <label>
+                                    <input type="radio" name="plan" {% if option.selected %}checked{% endif %}> {{ option.plan }}
+                                </label>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    <!-- Giá sản phẩm -->
+                    <div class="price">
+                        {% if products_packages  and products_packages.price  %}
+                            {{ "{:,.0f}đ".format(products_packages.price) }}
+                        {% else %}
+                            Giá không có sẵn
+                        {% endif %}
+                    </div>
+                    <button><a href="{{ url_for('dat_hang') }}" class="add-to-cart">Trở về</a></button>
+                    <div class="iconproduct"><button class="add-to-cart">Thêm vào giỏ</button></div>
+                </div>
+            </div>
+
+            <!-- Hình ảnh bổ sung -->
+            <div class="menu-image">
+                <img src="{{ url_for('static', filename='images/thucdonthuong.png') }}" alt="Weekly Menu" />
+                <img src="{{ url_for('static', filename='images/thudonchay.png') }}" alt="Weekly Menu" />
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="space_1"></div>
+{% endblock %}
+
+
+<div id="cart-summary">
+        <div id="cart-summary-header">
+            <h3>GIỎ HÀNG</h3>
+            <button class="close-btn">X</button> <!-- Nút thoát -->
+        </div>
+
+        <div id="cart-items">
+            <!-- Sản phẩm sẽ được thêm vào đây -->
+        </div>
+
+        <div id="cart-summary-footer">
+            <div class="temp-total">
+                Tạm tính: <span id="total-price">0đ</span>
+            </div>
+            <a href="{{ url_for('dat_hang') }}">
+            <button class="order-btn">Đặt hàng</button>
+            </a>
+        </div>
+    </div>
+    <!-- Lớp overlay để che nội dung khi giỏ hàng mở -->
+    <div class="overlay"></div>
+    <script src="{{ url_for('static', filename='js/script3.js') }}"></script>

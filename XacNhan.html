@@ -1,0 +1,226 @@
+{% extends "inherit.html" %}
+
+{% block title %}Xác Nhận{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styleXacnhan.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container_1">
+    <div class="step-container">
+        <div class="step-container">
+            <a class="step_1 step-active" href="{{ url_for('dat_hang') }}">
+                <i class="fas fa-shopping-cart"></i> Đặt hàng
+            </a>
+            <a class="step_1" href="{{ url_for('chinh_sua') }}">
+                <i class="fas fa-edit"></i> Chỉnh sửa
+            </a>
+            <a class="step_2" href="{{ url_for('thanh_toan') }}">
+                <i class="fas fa-dollar-sign"></i> Thanh toán
+            </a>
+            <a class="step_3" href="{{ url_for('xac_nhan') }}">
+                <i class="fas fa-check"></i> Xác nhận
+            </a>
+        </div>
+         <!-- Phần địa chỉ giao hàng -->
+    </div>
+    <div class="Header">
+        <h2>XÁC NHẬN</h2>
+    </div>
+    <div class="container">
+        <div class="confirmation">
+            <p>Hi Huy Kiên</p>
+            <p>Cảm ơn bạn đã đặt hàng tại Fitfood.vn, chúng tôi xác nhận thông tin đơn hàng của bạn đã được ghi nhận trên hệ thống của chúng tôi. Bạn lưu ý rằng Fitfood không xác nhận qua việc gọi điện thoại. Nếu bạn nhận được email này, đơn hàng của bạn đã được ghi nhận thành công. <i>(vui lòng kiểm tra Spam nếu bạn không nhận được).</i></p>
+            <p>Bạn kiểm tra kỹ lại các thông tin bên dưới và đừng ngần ngại gọi cho chúng tôi <span class="highlight-phone">0932 788 120</span> hoặc inbox cho Fanpage Fitfood: <a href="https://m.me/fitfoodvietnam">m.me/fitfoodvietnam</a> nếu bạn muốn thay đổi thông tin. Vui lòng <b>không</b> trả lời lại email này vì đây là email tự động được gửi từ hệ thống.</p>
+
+            <p class="order-info">Đơn hàng của bạn sẽ được bắt đầu giao vào ngày: <span class="highlight-date">28/10/2024</span></p>
+            <ul class="order-details">
+                <li><strong>Mã đơn hàng:</strong> 07E4E3</li>
+                <li><strong>Tên: Huy Kiên</strong> </li>
+                <li><strong>Số điện thoại: 0987654321</strong> </li>
+                <li><strong>Địa chỉ giao hàng: 523 Giải Phóng, Khương Thượng</strong> </li>
+                <li><strong>Quận: dongda</strong> </li>
+                <li><strong>Thời gian giao hàng: 9:00 - 9:30am</strong> </li>
+            </ul>
+        </div>
+
+
+        
+        <div class="chitietdonhang"><p>Chi tiết đơn hàng</p></div>
+
+        <script src="{{ url_for('static', filename='js/scriptXacnhan.js') }}"></script>
+
+        <div class="order_1">
+            <!-- Bảng sản phẩm -->
+            <div class="order-header">
+                <div class="order-label">Tên sản phẩm</div>
+                <div class="order-label-pr">Giá</div>
+                <div class="order-label-qtt">Số lượng</div>
+                <div class="order-label" style="text-align: right; padding-right: 35px;">Tổng</div>
+            </div>
+
+            <!-- Khối chứa sản phẩm -->
+            <div id="cart-items-container">
+                <!-- Sản phẩm sẽ được chèn vào đây bằng JavaScript -->
+            </div>
+
+            <div class="order-row">
+                <div class="order-label-product">Phí ship</div>
+                <div class="order-value"><s>100,000đ</s></div>
+            </div>
+
+            <div class="order-row">
+                <div class="order-label-product">Mã khuyến mãi</div>
+                <div class="order-value">0</div>
+            </div>
+
+            <div class="order-row">
+                <div class="order-label-product">Giảm giá</div>
+                <div class="order-value">0</div>
+            </div>
+
+            <div class="order-row">
+                <div class="order-label-product">Phí đổi món</div>
+                <div class="order-value">0</div>
+            </div>
+
+            <div class="separator">----------------------------------</div>
+
+            <div class="order-total-row">
+                    <div class="order-label-product"><strong>Tổng đơn hàng</strong></div>
+                    <div class="order-value"><span id="total-price"></span></div>
+            </div>
+        </div>
+
+
+
+
+
+<div class="menu-container">
+    <p>HealthyFood xin gửi kèm Thực đơn:</p>
+
+    <table class="menu-table">
+        <thead>
+            <tr>
+                <th>Ngày</th>
+                <th>Sáng</th>
+                <th>Trưa</th>
+                <th>Tối</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div>T2</div>
+                    <div>28.10</div>
+                </td>
+                <td>
+                    <strong>Salad lườn ngỗng xông khói</strong><br>
+                    Smoked Goose Breast Salad
+                </td>
+                <td>
+                    <strong>Cá sốt thơm Thái + Bún gấc</strong><br>
+                    Fish with Pineapple Sauce + Veggies Vermicelli
+                </td>
+                <td>
+                    <strong>Gà Dầu Hào + Gạo Lức Tỏi</strong><br>
+                    Oyster Chicken + Garlic Brown Rice
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>T3</div>
+                    <div>29.10</div>
+                </td>
+                <td>
+                    <strong>Nui nấu sườn non</strong><br>
+                    Pork ribs Soup Penne
+                </td>
+                <td>
+                    <strong>Cơm Tôm Cà Ri Malaysia</strong><br>
+                    Malaysian Shrimp Curry
+                </td>
+                <td>
+                    <strong>Bò xào Khoai Lang</strong><br>
+                    Pan-Fried Beef W Sweet Potato
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>T4</div>
+                    <div>28.10</div>
+                </td>
+                <td>
+                    <strong>Salad lườn ngỗng xông khói</strong><br>
+                    Smoked Goose Breast Salad
+                </td>
+                <td>
+                    <strong>Cá sốt thơm Thái + Bún gấc</strong><br>
+                    Fish with Pineapple Sauce + Veggies Vermicelli
+                </td>
+                <td>
+                    <strong>Gà Dầu Hào + Gạo Lức Tỏi</strong><br>
+                    Oyster Chicken + Garlic Brown Rice
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>T5</div>
+                    <div>28.10</div>
+                </td>
+                <td>
+                    <strong>Salad lườn ngỗng xông khói</strong><br>
+                    Smoked Goose Breast Salad
+                </td>
+                <td>
+                    <strong>Cá sốt thơm Thái + Bún gấc</strong><br>
+                    Fish with Pineapple Sauce + Veggies Vermicelli
+                </td>
+                <td>
+                    <strong>Gà Dầu Hào + Gạo Lức Tỏi</strong><br>
+                    Oyster Chicken + Garlic Brown Rice
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>T6</div>
+                    <div>28.10</div>
+                </td>
+                <td>
+                    <strong>Salad lườn ngỗng xông khói</strong><br>
+                    Smoked Goose Breast Salad
+                </td>
+                <td>
+                    <strong>Cá sốt thơm Thái + Bún gấc</strong><br>
+                    Fish with Pineapple Sauce + Veggies Vermicelli
+                </td>
+                <td>
+                    <strong>Gà Dầu Hào + Gạo Lức Tỏi</strong><br>
+                    Oyster Chicken + Garlic Brown Rice
+                </td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+
+    <p>Ghi chú gói ăn:</p>
+    <p>Ghi chú giao hàng:</p>
+
+    <hr>
+
+    <p>Bạn đã chọn hình thức thanh toán: Thanh toán tiền mặt</p>
+    <p>Bạn vui lòng thực hiện thanh toán vào ngày đầu tiên khi Shipper giao hàng.</p>
+    <p>*** Fitfood cám ơn bạn đã đặt hàng. Chúng tôi hy vọng bạn sẽ hài lòng với dịch vụ của Fitfood! ***</p>
+</div>
+<!-- Nút xác nhận và trở về -->
+        <div class="button-section">
+            <button><a href="{{ url_for('thanh_toan') }}"  class="button-back">Trở về</a></button>
+            <a class="button-complete" href="#" onclick="confirmOrder()">Xác nhận</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="space_1"></div>
+{% endblock %}

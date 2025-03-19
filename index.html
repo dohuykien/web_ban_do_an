@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}HealthyFood{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div id="header-wrapper">
+        <header>
+            <a class="logo" href="{{ url_for('trang_chu') }}">
+                <img src="{{ url_for('static', filename='images/1.png') }}" alt="HealthyFood Logo">
+                <span>HealthyFood.VN</span>
+            </a>
+
+            <nav class="main-menu">
+                <a href="{{ url_for('trang_chu') }}">Trang chủ</a>
+                <a href="{{ url_for('thuc_don') }}">Thực đơn</a>
+                <a href="{{ url_for('dat_hang') }}">Đặt hàng</a>
+                <a href="{{ url_for('tin_tuc') }}">Tin tức</a>
+                <a href="{{ url_for('faqs') }}">FAQs</a>
+            </nav>
+
+            <div class="right-menu">
+                {% if session["username"] %}
+                <div class="user">
+                    <div class="user-nav d-flex">
+                                    <div class="avatar" >
+                                        <a href="{{ url_for('TaiKhoan') }}" >
+                                            <img class="tk-avatar" src="{{ url_for('static', filename='images/no-image.png') }}" alt="">
+                                        </a>
+<!--                                        <a href="{{ url_for('TaiKhoan') }}" class="name"><strong>Xin Chào {{ session["username"] }}</strong></a>-->
+<!--                                        <br/><a href="{{ url_for('logout') }}">Thoát</a>-->
+                                    </div>
+                                    <div class="welcome" >
+                                        <a href="{{ url_for('TaiKhoan') }}" class="name"><strong>Xin Chào {{ session["username"] }}</strong></a>
+                                        <br/><a href="{{ url_for('logout') }}">Thoát</a>
+                                    </div>
+                                </div>
+                </div>
+                {% else %}
+                <a href="#" id="openRegister">Đăng ký</a>
+                <span>|</span>
+                <a href="#" id="openLogin">Đăng nhập</a>
+                <span>|</span>
+                {% endif %}
+                <a href="#"><img src="{{ url_for('static', filename='images/globe2.svg.png') }}" alt="Ngôn ngữ"> Tiếng Việt</a>
+                <span class="bottom">▼</span>
+                <div class="cart">
+                    <img src="{{ url_for('static', filename='images/cart.png') }}" alt="Giỏ hàng" >
+                    <span id="cart-count" style="display: none;"></span>
+                </div>
+            </div>
+        </header>
+    </div>
+
+<!--    Hiển thị thông báo flash-->
+    {% with notif = get_flashed_messages(category_filter=["notif"]) %}
+    {% if notif %}
+
+    <div class="alert-notif" id="alert" onclick="closeAlert()">
+<!--        <span class="close" id="closeAlert">&times;</span>-->
+              <ul>
+                {%- for msg in notif %}
+                <li >{{ msg }}</li>
+                {% endfor -%}
+            </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <!-- Registration Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeRegister">&times;</span>
+            <h2>Đăng ký</h2>
+            <p>Bạn đã có tài khoản? Vui lòng <a href="#" id="showLogin"> Đăng nhập</a></p>
+            <form action="/register" method="post" id="regForm">
+                <label for="fullname">Họ & tên:</label>
+                <input type="text" id="fullname" name="fullname" required>
+                <label for="regEmail">Email:</label>
+                <input type="email" id="regEmail" name="regEmail" required>
+                <label for="regPassword">Mật khẩu:</label>
+                <input type="password" id="regPassword" name="regPassword" required>
+                <label for="confirmPassword">Xác nhận mật khẩu:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <button type="submit">Đăng ký</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeLogin">&times;</span>
+            <h2>Đăng nhập</h2>
+            <p>Bạn chưa có tài khoản? Vui lòng <a href="#" id="showRegister"> Đăng ký</a></p>
+            <form  action="/login" method="post" id="logForm">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" name="loginEmail" required>
+                <label for="loginPassword">Mật khẩu</label>
+                <input type="password" id="loginPassword" name="loginPassword" required>
+                <p><a href="#">Quên mật khẩu?</a></p>
+                <button type="submit">Đăng nhập</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function closeAlert(){
+        const alert = document.getElementById("alert");
+        alert.remove();
+
+        }
+    </script>
+    <script>
+        // Get modal elements
+        var registerModal = document.getElementById("registerModal");
+        var loginModal = document.getElementById("loginModal");
+
+        // Get buttons that open the modals
+        var btnRegister = document.getElementById("openRegister");
+        var btnLogin = document.getElementById("openLogin");
+
+        // Get the <span> element that closes the modals
+        var closeRegister = document.getElementById("closeRegister");
+        var closeLogin = document.getElementById("closeLogin");
+
+        // Show register modal
+        btnRegister.onclick = function(event) {
+            event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+            registerModal.classList.add("show");
+            loginModal.classList.remove("show");
+            registerModal.style.display = "block";
+        }
+
+        // Show login modal
+        btnLogin.onclick = function(event) {
+            event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+            loginModal.classList.add("show");
+            registerModal.classList.remove("show");
+            loginModal.style.display = "block";
+        }
+
+        // Close the register modal
+        closeRegister.onclick = function() {
+            registerModal.classList.remove("show");
+            setTimeout(function() { registerModal.style.display = "none"; }, 300);
+        }
+
+        // Close the login modal
+        closeLogin.onclick = function() {
+            loginModal.classList.remove("show");
+            setTimeout(function() { loginModal.style.display = "none"; }, 300);
+        }
+
+        // Show login form from register modal
+        document.getElementById("showLogin").onclick = function() {
+            registerModal.classList.remove("show");
+            loginModal.classList.add("show");
+            setTimeout(function() {
+                registerModal.style.display = "none";
+                loginModal.style.display = "block";
+            }, 300);
+        }
+
+        // Show register form from login modal
+        document.getElementById("showRegister").onclick = function() {
+            loginModal.classList.remove("show");
+            registerModal.classList.add("show");
+            setTimeout(function() {
+                loginModal.style.display = "none";
+                registerModal.style.display = "block";
+            }, 300);
+        }
+
+        // Close the modal if the user clicks outside of it
+        window.onclick = function(event) {
+            if (event.target == registerModal) {
+                registerModal.classList.remove("show");
+                setTimeout(function() { registerModal.style.display = "none"; }, 300);
+            }
+            if (event.target == loginModal) {
+                loginModal.classList.remove("show");
+                setTimeout(function() { loginModal.style.display = "none"; }, 300);
+            }
+        }
+    </script>
+
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="{{ url_for('static', filename='images/1.png') }}" alt="Logo HealthyFood">
+                <h2>HealthyFood.VN</h2>
+            </div>
+
+            <div class="footer-company-info">
+                <h3>Công ty TNHH HealthyFood Việt Nam</h3>
+                <p>Địa chỉ: Kim Liên, Lương Định Của, Đống Đa, Hà Nội</p>
+                <p>Điện thoại: (+84) 347 007 115 [hotline]</p>
+                <p>Email: info@healthyfood.vn</p>
+                <p>MST: 0000000 do sở kế hoạch cấp và đầu tư Hà Nội cấp ngày 10/10/2024</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Điều khoản chung</h3>
+                <ul>
+                    <li>Chính sách quy định chung</li>
+                    <li>Quy định hình thức thanh toán</li>
+                    <li>Chính sách vận chuyển giao hàng</li>
+                    <li>Chính sách bảo mật thông tin</li>
+                </ul>
+            </div>
+
+            <div class="footer-follow-us">
+                <h3>Theo dõi chúng tôi tại</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="{{ url_for('static', filename='images/facebook (1).png') }}" alt="Facebook"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='images/ig.png') }}" alt="Instagram"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='images/youtb.png') }}" alt="YouTube"></a>
+                </div>
+                <div class="footer-certification">
+                    <img src="{{ url_for('static', filename='images/bocongthuong.webp') }}" alt="Bộ Công Thương">
+                </div>
+            </div>
+        </div>
+        <div class="space_1"></div>
+        <div class="overlay"></div>
+
+    </footer>
+    <div id="cart-summary">
+        <div id="cart-summary-header">
+            <h3>GIỎ HÀNG</h3>
+            <button class="close-btn">X</button>
+        </div>
+        <div id="cart-items">
+            <!-- Sản phẩm sẽ được thêm vào đây -->
+        </div>
+        <div id="cart-summary-footer">
+            <div class="temp-total">
+                Tạm tính: <span id="total-price">0đ</span>
+            </div>
+            <form action="{{ url_for('dat_hang') }}" method="POST">
+                <!-- Hiển thị các sản phẩm trong giỏ hàng -->
+                {% for item in cart_items %}
+                    <input type="hidden" name="cart_items" value="{{ item | tojson }}">
+                {% endfor %}
+                <button type="submit" class="button-complete">Đặt Hàng</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script2.js') }}"></script>
+
+</body>
+</html>

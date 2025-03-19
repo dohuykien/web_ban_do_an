@@ -1,0 +1,102 @@
+{% extends "inherit.html" %}
+
+{% block title %}Địa chỉ thanh toán{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styleDiaChiThanhToan.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container_1">
+    <div class="step-container">
+        <div class="step_1 step-active">
+            <i class="fas fa-shopping-cart"></i> Đặt hàng
+        </div>
+        <div class="step_1">
+            <i class="fas fa-edit"></i> Chỉnh sửa
+        </div>
+        <div class="step_2">
+            <i class="fas fa-dollar-sign"></i> Thanh toán
+        </div>
+        <div class="step_3">
+            <i class="fas fa-check"></i> Xác nhận
+        </div>
+    </div>
+
+    <div class="Header">
+        <h2>THANH TOÁN</h2>
+    </div>
+    <div class="address-section">
+        <h3>Địa chỉ giao hàng</h3>
+        <p>Bạn vui lòng nhập địa chỉ để chúng tôi giao hàng cho bạn.</p>
+        <button class="add-address-btn" onclick="openAddressForm()">+ Thêm địa chỉ mới</button>
+
+        <!-- Khu vực chứa các địa chỉ giao hàng -->
+        <div class="address-options">
+            <label>
+                <input type="radio" name="delivery-address" value="address1" checked>
+                <span class="name-phone">vănbeo 0962889650:</span>
+                <span class="address-details">ádafa, Xã Bình Hưng, Huyện Bình Chánh</span>
+            </label>
+            <label>
+<!--                Khu vực chứa các địa chỉ giao hàng khác -->
+            </label>
+
+        </div>
+
+        <!-- Form thêm địa chỉ mới -->
+        <div id="addressForm" class="modal">
+            <div class="modal-content">
+                <h2>Thêm Địa Chỉ Mới</h2>
+                <form  id="addressFormContent">
+                    <label for="fullname">Họ và tên:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+
+                    <label for="phone">Số điện thoại:</label>
+                    <input type="text" id="phone" name="phone" required>
+
+                    <label for="gender">Giới tính:</label>
+                    <select id="gender" name="gender">
+                        <option value="male">Nam</option>
+                        <option value="female">Nữ</option>
+                    </select>
+
+                    <label for="district">Quận:</label>
+                    <select id="district" name="district">
+                        <option value="dongda">Đống Đa</option>
+                        <option value="caugiay">Cầu Giấy</option>
+                        <option value="thanhxuan">Thanh Xuân</option>
+                    </select>
+
+                    <label for="ward">Phường:</label>
+                    <input type="text" id="ward" name="ward" required>
+
+                    <label for="address">Số nhà, Tên đường:</label>
+                    <input type="text" id="address" name="address" required>
+
+                    <div class="default-address">
+                        <input type="checkbox" id="default" name="defaultAddress">
+                        <label for="defaultAddress">Đặt làm địa chỉ mặc định</label>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="button" class="btn-cancel" onclick="closeAddressForm()">Trở về</button>
+                        <button type="button" class="btn-submit" onclick="addNewAddress()">Hoàn tất</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="space"></div>
+        <div class="action-buttons">
+            <a  class="complete-btn" href="{{ url_for('thanh_toan') }}">Hoàn thành</a>
+        </div>
+    </div>
+
+</div>
+<div class="space_1"></div>
+
+<script src="{{ url_for('static', filename='js/scriptDiaChiThanhToan.js') }}"></script>
+
+
+{% endblock %}

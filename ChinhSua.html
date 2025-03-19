@@ -1,0 +1,107 @@
+{% extends "inherit.html" %}
+
+{% block title %}Thanh Toán{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylechinhsua.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container_1">
+    <div class="step-container">
+        <div class="step-container">
+            <a class="step_1 step-active" href="{{ url_for('dat_hang') }}">
+                <i class="fas fa-shopping-cart"></i> Đặt hàng
+            </a>
+            <a class="step_1" href="{{ url_for('chinh_sua') }}">
+                <i class="fas fa-edit"></i> Chỉnh sửa
+            </a>
+            <div class="step_2" >
+                <i class="fas fa-dollar-sign"></i> Thanh toán
+            </div>
+            <div class="step_3">
+                <i class="fas fa-check"></i> Xác nhận
+            </div>
+        </div>
+         <!-- Phần địa chỉ giao hàng -->
+    </div>
+    <div class="Header">
+        <h2>ĐỔI MÓN</h2>
+    </div>
+    <div class="order-summary">
+        <p class="instruction">Từ nay bạn đã có thể tự lựa chọn món ăn yêu thích. (1) Nhấn vào tên gói ăn (2) BẬT tính năng chọn món (3) Tự chọn món yêu thích (4) LƯU lại sau khi chỉnh.</p>
+        <div class="package">
+
+            <div id="cart-items-container">
+                <!-- Sản phẩm sẽ được chèn vào đây bằng JavaScript -->
+            </div>
+
+            <div class="action-buttons">
+                <button class="save-button">Lưu</button>
+                <button class="delete-button">Xóa</button>
+                <button class="toggle-button">▼</button>
+            </div>
+        </div>
+
+        <div class="collapsible-content">
+            <div class="menu-background">
+                <div id="menu-section">
+
+                    <!-- Content continues as in your provided block -->
+                    <div class="menu-background">
+
+
+                            <div class="day-menu">
+                                <div class="header-row">
+                                    <div class="header-cell red-text">NGÀY</div>
+                                    <div class="header-cell">SÁNG</div>
+                                    <div class="header-cell">TRƯA</div>
+                                    <div class="header-cell">TỐI</div>
+                                </div>
+
+                                 {% for day_menu in menu_items %}
+                                    <div class="menu-row">
+                                        <div class="menu-day">
+                                            <div class="day-circle">
+                                                <span>{{ day_menu.day }}</span>
+                                                <span>{{ day_menu.date }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="menu-content">
+                                            {% for item in day_menu.menu_items_list %}
+                                                <div class="menu-item">
+                                                    <h3>{{ item.name }}</h3>
+                                                    <p>{{ item.description }}</p>
+                                                    <p class="calories">{{ item.calories }} Kcal | {{ item.nutrition }}</p>
+                                                    <div class="quantity-control">
+                                                        <button class="quantity-btn decrease">-</button>
+                                                        <span class="quantity">0</span>
+                                                        <button class="quantity-btn increase">+</button>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="{{ url_for('static', filename='js/scriptchinhsua.js') }}"></script>
+
+        <div class="summary-details">
+            <p class="sum"><strong>Tổng đơn hàng:</strong> <span id="total-price"></span></p>
+            <a class="order-button" href="{{ url_for('thanh_toan') }}">Đặt hàng</a>
+        </div>
+
+    </div>
+    <div class="space_1"></div>
+
+{% endblock %}

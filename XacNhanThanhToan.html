@@ -1,0 +1,72 @@
+
+{% block title %}{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+    <h2>Bạn đã thanh toán thành công!</h2>
+    <p>Vui lòng ấn vào nút này để về trang chủ:</p>
+    <button onclick="goHome()">Về trang chủ</button>
+
+    <script>
+        function goHome() {
+            window.location.href = "/"; // Thay đổi index.html thành trang chủ của bạn
+        }
+    </script>
+
+    <style>
+        /* Reset một số thuộc tính cơ bản */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Định dạng tiêu đề */
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+            color: #4CAF50; /* Màu xanh lá cây */
+        }
+
+        /* Định dạng nội dung */
+        p {
+            text-align: center;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        /* Định dạng nút */
+        button {
+            display: block;
+            margin: 0 auto; /* Căn giữa nút */
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50; /* Màu nền nút */
+            color: white; /* Màu chữ */
+            border: none;
+            border-radius: 5px; /* Bo tròn các góc */
+            cursor: pointer; /* Thay đổi con trỏ khi di chuột qua nút */
+            transition: background-color 0.3s; /* Hiệu ứng chuyển đổi màu nền */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Màu nền khi di chuột qua nút */
+        }
+
+        /* Định dạng cho trang chính */
+        .container {
+            max-width: 600px;
+            margin: 0 auto; /* Căn giữa */
+            padding: 20px;
+            background: white; /* Nền trắng cho vùng nội dung */
+            border-radius: 10px; /* Bo tròn các góc cho vùng nội dung */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng cho vùng nội dung */
+        }
+    </style>
+
+{% endblock %}

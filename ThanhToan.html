@@ -1,0 +1,114 @@
+{% extends "inherit.html" %}
+
+{% block title %}Thanh Toán{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleThanhToan.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container_1">
+    <div class="step-container">
+        <div class="step-container">
+            <a class="step_1 step-active" href="{{ url_for('dat_hang') }}">
+                <i class="fas fa-shopping-cart"></i> Đặt hàng
+            </a>
+            <a class="step_1" href="{{ url_for('chinh_sua') }}">
+                <i class="fas fa-edit"></i> Chỉnh sửa
+            </a>
+            <a class="step_2" href="{{ url_for('thanh_toan') }}">
+                <i class="fas fa-dollar-sign"></i> Thanh toán
+            </a>
+            <div class="step_3" href="{{ url_for('xac_nhan') }}">
+                <i class="fas fa-check"></i> Xác nhận
+            </div>
+        </div>
+         <!-- Phần địa chỉ giao hàng -->
+    </div>
+    <div class="Header">
+        <h2>THANH TOÁN</h2>
+    </div>
+
+    <div class="address-section">
+        <h3>Địa chỉ giao hàng</h3>
+        <p id="address-display">Bạn vui lòng nhập địa chỉ để chúng tôi giao hàng cho bạn.</p>
+        <a href="{{ url_for('dia_chi_thanh_toan') }}" class="add-address-btn">+ Thêm địa chỉ giao hàng</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scriptThanhToan.js') }}"></script>
+
+    <!-- Bảng sản phẩm -->
+    <div class="table-header">
+        <div class="nameproduct">Tên sản phẩm</div>
+        <div>Giá</div>
+        <div>Số lượng</div>
+        <div>Tổng</div>
+    </div>
+
+    <!-- Khối chứa sản phẩm -->
+    <div id="cart-items-container">
+        <!-- Sản phẩm sẽ được chèn vào đây bằng JavaScript -->
+    </div>
+
+    <!-- Khối tổng đơn hàng -->
+    <div class="summary-section">
+        <div class="summary-details">
+            <p>Phí ship: <s>100,000đ</s></p>
+            <p>Giảm giá: <span>0đ</span></p>
+            <p class="sum"><strong>Tổng đơn hàng:</strong> <span id="total-price"></span></p>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <!-- Mã khuyến mãi -->
+        <div class="section">
+            <h2>Mã khuyến mãi</h2>
+            <div class="promo-section">
+                <input type="text" class="input-box" placeholder="Nhập mã khuyến mãi">
+                <button class="button-red">Áp dụng</button>
+            </div>
+        </div>
+
+        <!-- Thời gian giao hàng -->
+        <div class="section">
+            <h2>Thời gian giao hàng</h2>
+            <select id="deliveryTime" class="select-box">
+                <option value="7:30 - 8:00am">7:30 - 8:00am</option>
+                <option value="8:00 - 8:30am">8:00 - 8:30am</option>
+                <option value="8:30 - 9:00am">8:30 - 9:00am</option>
+                <option value="9:00 - 9:30am">9:00 - 9:30am</option>
+                <option value="9:30 - 10:00am">9:30 - 10:00am</option>
+                <option value="10:00 - 10:30am">10:00 - 10:30am</option>
+                <option value="10:30 - 11:00am">10:30 - 11:00am</option>
+            </select>
+        </div>
+
+        <!-- Phương thức thanh toán -->
+        <div class="section">
+            <h2>Phương thức thanh toán</h2>
+            <select class="select-box">
+                <option>Thanh toán QR</option>
+                <option>Momo</option>
+                <option>Thanh toán tiền mặt</option>
+                <option>Thanh toán thẻ(có phí)</option>
+            </select>
+        </div>
+
+        <!-- Ghi chú -->
+        <div class="section">
+            <h2>Note</h2>
+            <textarea class="input-box" rows="3" placeholder="Ghi chú về địa chỉ giao hàng, số nhà, chung cư, tên tòa nhà văn phòng,..."></textarea>
+        </div>
+    </div>
+
+        <!-- Nút hoàn thành và trở về -->
+        <div class="button-section">
+            <button><a href="{{ url_for('dat_hang') }}"  class="button-back">Trở về</a></button>
+            <a class="button-complete" href="{{ url_for('xac_nhan') }}">Tiếp theo</a>
+        </div>
+    </div>
+    <div class="space_1"></div>
+
+{% endblock %}

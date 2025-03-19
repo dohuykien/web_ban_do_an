@@ -1,0 +1,119 @@
+{% extends "inherit.html" %}
+
+{% block title %}Đặt Hàng{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styledatHang.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div id="wp-product">
+        <div class="header3">
+            <h2>CHỌN GÓI ĂN</h2>
+            <div class="orange-bar_2"></div>
+            <p>HealthyFood cung cấp nhiều gói ăn và thực đơn phong phú kèm đa dạng thực phẩm phù hợp với nhu cầu của bạn</p>
+        </div>
+        <div class="product">
+            {% for package in packages %}
+            <div class="item" data-name="{{ package.name }}" data-price="{{ package.price }}" data-image="{{ url_for('static', filename=package.image) }}" data-id="{{ package.id }}">
+                <a href="{{ url_for('chitiet_sp', product_id=package.id ) }}">
+                    <img src="{{ url_for('static', filename=package.image) }}">
+                    <div class="name">{{ package.name }}</div>
+                    <div class="desc">{{ package.description }}</div>
+                    <div class="time">{{ package.time }}</div>
+                    <div class="price">{{ "{:,.0f}đ".format(package.price) }}</div>
+                </a>
+                <div class="iconproduct"><img src="{{ url_for('static', filename='images/cart.png') }}"></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div id="wp_2">
+        <div class="header3_2">
+            <h2>CHẾ BIẾN SẴN</h2>
+            <div class="orange-bar_1"></div>
+        </div>
+        <div class="product">
+            {% for item in processed_items %}
+            <div class="item" data-name="{{ item['name'] }}" data-price="{{ item['price'] }}" data-image="{{ url_for('static', filename=item['image']) }}">
+                <a href="{{ url_for('chitiet_sp', product_id=item.id ) }}">
+                    <img src="{{ url_for('static', filename=item['image']) }}">
+                    <div class="name">{{ item['name'] }}</div>
+                    <div class="desc_1">{{ item['price'] | number_format }}đ</div>
+                    <div class="time">{{ item['weight'] }}</div>
+                </a>
+                <div class="iconproduct"><img src="{{ url_for('static', filename='images/cart.png') }}"></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div id="wp_2">
+        <div class="header3_2">
+            <h2>GÓI NƯỚC</h2>
+            <div class="orange-bar_1"></div>
+        </div>
+        <div class="product">
+            {% for drink in drinks %}
+            <div class="item" data-name="{{ drink['name'] }}" data-price="{{ drink['price'] }}" data-image="{{ url_for('static', filename=drink['image']) }}">
+                <a href="{{ url_for('chitiet_sp', product_id=drink.id ) }}">
+                    <img src="{{ url_for('static', filename=drink['image']) }}">
+                    <div class="name">{{ drink['name'] }}</div>
+                    <div class="desc_1">{{ drink['price'] | number_format(0, '.', ',') }}đ</div>
+                    <div class="time">{{ drink['time'] }}</div>
+                </a>
+                <div class="iconproduct"><img src="{{ url_for('static', filename='images/cart.png') }}"></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div id="wp_2">
+        <div class="header3_2">
+            <h2>QUÀ TẶNG</h2>
+            <div class="orange-bar_1"></div>
+        </div>
+        <div class="product">
+            {% for gift in gifts %}
+            <div class="item" data-name="{{ gift['name'] }}" data-price="{{ gift['price'] }}" data-image="{{ url_for('static', filename=gift['image']) }}">
+                <a href="{{ url_for('chitiet_sp', product_id=gift.id ) }}">
+                    <img src="{{ url_for('static', filename=gift['image']) }}">
+                    <div class="name">{{ gift['name'] }}</div>
+                    <div class="desc_1">{{ gift['price'] | number_format(0, '.', ',') }}đ</div>
+                    <div class="time">{{ gift['time'] }}</div>
+                </a>
+                <div class="iconproduct"><img src="{{ url_for('static', filename='images/cart.png') }}"></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="space_1"></div>
+    <div class="overlay"></div>
+    <div id="cart-summary">
+        <div id="cart-summary-header">
+            <h3>GIỎ HÀNG</h3>
+            <button class="close-btn">X</button>
+        </div>
+        <div id="cart-items">
+            <!-- Sản phẩm sẽ được thêm vào đây -->
+        </div>
+        <div id="cart-summary-footer">
+            <div class="temp-total">
+                Tạm tính: <span id="total-price">0đ</span>
+            </div>
+            <form action="{{ url_for('dat_hang') }}" method="POST">
+                <!-- Hiển thị các sản phẩm trong giỏ hàng -->
+                {% for item in cart_items %}
+                    <input type="hidden" name="cart_items" value="{{ item | tojson }}">
+                {% endfor %}
+                <button type="submit" class="button-complete">Đặt Hàng</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script2.js') }}"></script>
+
+
+{% endblock %}

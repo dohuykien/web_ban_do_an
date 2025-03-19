@@ -1,0 +1,193 @@
+{% extends "inherit.html" %}
+
+{% block title %}Thực đơn{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/stylethucdon.css') }}">
+{% endblock %}
+
+{% block content %}
+    <style>
+    #banner {
+        background-image: url("{{ url_for('static', filename='images/banner2.webp') }}");
+    }
+    </style>
+    <div id="banner">
+        <div class="overlay"></div> <!-- Lớp phủ tạo độ mờ -->
+        <div class="content">
+            <h1>WEEKLY MEAL PLAN</h1>
+            <h2>14/10 - 18/10</h2>
+            <button onclick="location.href ='{{ url_for('dat_hang') }}';">Đặt Ngay</button>
+        </div>
+    </div>
+
+    <div class="menu-background">
+        <div id="menu-section">
+            <div class="text-section">
+                <h1>THỰC ĐƠN</h1>
+                <div class="orange-bar"></div>
+                <p class="description">Thực đơn Fitfood là sự kết hợp tinh tế của ẩm thực Đông Tây</p>
+                <p>Từng bữa ăn được thiết kế bởi bếp trưởng nhà hàng cùng đội ngũ dinh dưỡng để đảm bảo được sự cân bằng trong hương vị nhưng vẫn giữ được chất lượng ở mức cao nhất. Tất cả các món đều đảm bảo ko bột ngọt và ít đường.</p>
+            </div>
+    
+            <div class="week-selector">
+                <div class="week-navigation">
+                    <button class="prev-week">⟨⟨ TUẦN TRƯỚC</button>
+                    <span class="week-dates">14.10 ➔ 18.10</span>
+                    <button class="next-week">TUẦN SAU ⟩⟩</button>
+                </div>
+                <button  class="order-btn_2" onclick="location.href ='{{ url_for('dat_hang') }}';">Đặt Ngay</button>
+            </div>
+
+            <div class="day-menu">
+                <div class="header-row">
+                    <div class="header-cell red-text">NGÀY</div>
+                    <div class="header-cell">SÁNG</div>
+                    <div class="header-cell">TRƯA</div>
+                    <div class="header-cell">TỐI</div>
+                </div>
+                {% for day_menu in menu_items %}
+                    <div class="menu-row">
+                        <div class="menu-day">
+                            <div class="day-circle">
+                                <span>{{ day_menu.day }}</span>
+                                <span>{{ day_menu.date }}</span>
+                            </div>
+                        </div>
+                        <div class="menu-content">
+                            {% for item in day_menu.menu_items_list %}
+                                <div class="menu-item">
+                                    <h3>{{ item.name }}</h3>
+                                    <p>{{ item.description }}</p>
+                                    <p class="calories">{{ item.calories }} Kcal | {{ item.nutrition }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <img id="menu-image" src="{{ url_for('static', filename='images/banner2.webp') }}" style="display: none;">
+                {% endfor %}
+            </div>
+            <!-- Modal ảnh -->
+            <div id="image-modal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modal-image">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="menu-background">
+        <div id="menu-section">
+            <div class="text-section">
+                <h1>THỰC ĐƠN CHAY</h1>
+                <div class="blue-bar"></div>
+            </div>
+    
+            <div class="week-selector">
+                <div class="week-navigation">
+                    <button class="prev-week">⟨⟨ TUẦN TRƯỚC</button>
+                    <span class="week-dates">14.10 ➔ 18.10</span>
+                    <button class="next-week">TUẦN SAU ⟩⟩</button>
+                </div>
+                <button class="order-btn_1" onclick="location.href ='{{ url_for('dat_hang') }}';" >Đặt Ngay</button>
+            </div>
+            <div class="day-menu">
+                <div class="header-row_1">
+                    <div class="header-cell red-text_1">NGÀY</div>
+                    <div class="header-cell">MEAL1</div>
+                    <div class="header-cell">MEAL2</div>
+                </div>
+                {% for item in vegetarians %}
+                    <div class="menu-row_1">
+                        <div class="menu-day">
+                            <div class="day-circle_1">
+                                <span>{{ item.day }}</span>
+                                <span>{{ item.date }}</span>
+                            </div>
+                        </div>
+                        <div class="menu-content_1">
+                            {% for dish in item.vegetarians_items %}
+                            <div class="menu-item_1">
+                                <h3>{{ dish.name }}</h3>
+                                <p>{{ dish.description }}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+                <!-- Modal ảnh -->
+                <div id="image-modal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="modal-image">
+                </div>
+
+        </div>
+    </div>
+</div>
+<div class="space"></div>
+<div class="note-container">
+    <div class="note">
+        <h2>Note!</h2>
+        <p>Các phần ăn được tính toán calories cẩn thận. 
+            Chỉ số dinh dưỡng dưới tên phần ăn được liệt kê theo thứ tự Năng lượng (Kcal/Calories), 
+            Tinh Bột, Chất béo và Chất đạm.</p>
+        <p>Lưu ý: Các phần ăn của Fitfood luôn được giao lạnh, đựng trong
+            hộp nhựa thân thiện với lò vi sóng.
+            Vui lòng bảo quản lạnh sau khi nhận hàng và hâm nóng từ 2-3 phút 
+            trước khi dùng.</p>
+        <p>
+            Phần ăn bình thường chỉ bao gồm
+            thịt và rau củ, Tinh bột phức (gạo lức, gạo nâu, mì rau củ, bún, bánh mì nâu)
+            sẽ được gửi kèm trong phần ăn có ghi chú dấu (+) 
+        </p>
+    </div>
+</div>
+
+<script>
+// Chọn tất cả các phần tử menu-row_1
+document.querySelectorAll('.menu-row_1').forEach(function(menuRow) {
+    menuRow.addEventListener('click', function() {
+        var modal = document.getElementById('image-modal');
+        var modalImg = document.getElementById('modal-image');
+
+        // Đặt đường dẫn cho ảnh trong modal
+        modalImg.src = "{{ url_for('static', filename='images/thudonchay.png') }}";
+
+        // Hiển thị modal
+        modal.style.display = 'block';
+    });
+});
+document.querySelectorAll('.menu-row').forEach(function(menuRow) {
+    menuRow.addEventListener('click', function() {
+        var modal = document.getElementById('image-modal');
+        var modalImg = document.getElementById('modal-image');
+
+        // Đặt đường dẫn cho ảnh trong modal
+        modalImg.src = "{{ url_for('static', filename='images/thucdonthuong.png') }}";
+
+        // Hiển thị modal
+        modal.style.display = 'block';
+    });
+});
+
+// Đóng modal khi nhấn vào nút x
+document.querySelectorAll('.close').forEach(function(closeButton) {
+    closeButton.addEventListener('click', function(event) {
+        // Ngừng lan truyền sự kiện để không gây xung đột với sự kiện click ngoài modal
+        event.stopPropagation();
+        document.getElementById('image-modal').style.display = 'none';
+    });
+});
+
+// Đóng modal khi nhấn vào bất kỳ đâu bên ngoài ảnh
+document.getElementById('image-modal').addEventListener('click', function(event) {
+    // Nếu người dùng nhấn vào phần nền (không phải ảnh)
+    if (event.target === this) {
+        this.style.display = 'none';
+    }
+});
+
+
+</script>
+
+{% endblock %}
